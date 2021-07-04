@@ -1,0 +1,60 @@
+#+TITLE: Dwm Config
+#+AUTHOR: Ashin Antony
+
+#+CAPTION: Dwm Scrot
+#+ATTR_HTML: :alt Qtile Scrot :title Qtile Scrot :align left
+[[https://github.com/ashincoder/dwm-ashin/blob/main/dwm_desktop.png]]
+
+* TABLE OF CONTENTS :toc:
+- [[#about-config][ABOUT CONFIG]]
+- [[#installation][INSTALLATION]]
+- [[#autostart][AUTOSTART]]
+
+* ABOUT CONFIG
+Dwm is an extremely fast, small, and dynamic window manager for X. Dwm is created by the good folks at https://suckless.org. This is my personal build of dwm. I used a number of patches in this build to make dwm more "sensible" rather than "suckless." The patches I added to this build include
+
++ attachaside (new clients appear in the stack rather than as the master)
++ cyclelayouts (cycles through the available layouts)
++ gridmode (adding a grid layout)
++ restartsig (allows dwm to be restarted with a keybinding)
++ rotatestack (moves a window through the stack, in either direction)
++ uselessgap (adding gaps when more than one window)
++ colorbar (allows the functionality to add colors to bars)
++ hide vacant tags patch
++ focus on active patch
+
+If you use a login manager (like lightdm), make sure that you have a file called dwm.desktop in your /usr/share/xsessions/ directory.  It should look something like this:
+
+#+begin_example
+[Desktop Entry]
+Encoding=UTF-8
+Name=Dwm
+Comment=Dynamic window manager
+Exec=dwm
+Icon=dwm
+Type=XSession
+#+end_example
+
+* INSTALLATION
+Clone this repository and recompile using the following
+#+begin_example
+sudo make clean install
+#+end_example
+
+* AUTOSTART
+dwm-ashin has been patched in such a way that it looks for an autostart file at: $HOME/.dwm/autostart.sh
+
+You will need to create this file and the directory that it is located.  An example autostart.sh is included below:
+
+#+begin_example
+#! /bin/bash
+picom -CGb &
+feh --bg-scale /usr/share/backgrounds/wallpapers/0052.jpg &
+/usr/bin/dunst &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+xsetroot -cursor_name left_ptr &
+dwmblocks &
+emacs --daemon &
+#+end_example
+
+The example autostart.sh above launches the compton compositor, sets the wallpaper with nitrogen and launches dwmblocks to add some widgets to our dwm panel.  Obviously, you would need to install compton and nitrogen to use those programs in your autostart.  And you would need to install [dwmblocks](https://github.com/ashincoder/dwmblocks.git) to use it.  To use my dwmblocks, you also need to download the scripts found [here](https://github.com/ashincoder/dwmblocks/tree/main/scripts).
