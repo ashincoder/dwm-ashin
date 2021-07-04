@@ -42,7 +42,10 @@ sudo make clean install
 #+end_example
 
 * AUTOSTART
-dwm-ashin has been patched in such a way that it looks for an autostart file at: $HOME/.dwm/autostart.sh
+dwm-ashin has been patched in such a way that it looks for an autostart file at: $HOME/.local/share/dwm/autostart.sh
+The example autostart.sh above launches the compton compositor, sets the wallpaper with feh and launches slstatus to add some widgets to our dwm panel.  
+
+I use slstatus of suckless. My build of slstatus is [[here][https://github.com/ashincoder/slstatus-ashin]]
 
 You will need to create this file and the directory that it is located.  An example autostart.sh is included below:
 
@@ -51,10 +54,9 @@ You will need to create this file and the directory that it is located.  An exam
 picom -CGb &
 feh --bg-scale /usr/share/backgrounds/wallpapers/0052.jpg &
 /usr/bin/dunst &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 xsetroot -cursor_name left_ptr &
-dwmblocks &
-emacs --daemon &
+slstatus &
 #+end_example
 
-The example autostart.sh above launches the compton compositor, sets the wallpaper with nitrogen and launches dwmblocks to add some widgets to our dwm panel.  Obviously, you would need to install compton and nitrogen to use those programs in your autostart.  And you would need to install [dwmblocks](https://github.com/ashincoder/dwmblocks.git) to use it.  To use my dwmblocks, you also need to download the scripts found [here](https://github.com/ashincoder/dwmblocks/tree/main/scripts).
+If you would like to use dwmblocks.
+Then you would need to install [[dwmblocks][https://github.com/ashincoder/dwmblocks.git]] to use it.  To use my dwmblocks, you also need to download the scripts found [[here][https://github.com/ashincoder/dwmblocks/tree/main/scripts]].
