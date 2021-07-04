@@ -45,7 +45,7 @@ sudo make clean install
 dwm-ashin has been patched in such a way that it looks for an autostart file at: $HOME/.local/share/dwm/autostart.sh
 The example autostart.sh above launches the compton compositor, sets the wallpaper with feh and launches slstatus to add some widgets to our dwm panel.  
 
-I use slstatus of suckless. My build of slstatus is [[here][https://github.com/ashincoder/slstatus-ashin]]
+I use slstatus of suckless. My build of slstatus is [[https://github.com/ashincoder/slstatus-ashin][slstatus-ashin]]
 
 You will need to create this file and the directory that it is located.  An example autostart.sh is included below:
 
@@ -59,4 +59,4 @@ slstatus &
 #+end_example
 
 If you would like to use dwmblocks.
-Then you would need to install [[dwmblocks][https://github.com/ashincoder/dwmblocks.git]] to use it.  To use my dwmblocks, you also need to download the scripts found [[here][https://github.com/ashincoder/dwmblocks/tree/main/scripts]].
+Then you would need to install [[https://github.com/ashincoder/dwmblocks.git][dwmblocks]] to use it.  To use my dwmblocks, you also need to download the scripts found [[https://github.com/ashincoder/dwmblocks/tree/main/scripts][here]].
