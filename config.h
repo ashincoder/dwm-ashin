@@ -97,9 +97,9 @@ static const char *programs[]  = { ".local/bin/dm-kill", NULL };
 static const char *record[]  = { ".local/bin/dm-record", NULL };
 static const char *todo[]  = { ".local/bin/todo", NULL };
 /* Volume */
-static const char *upvol[]   = { "amixer", "-D", "pulse", "set", "Master", "3%+", NULL };
-static const char *downvol[]   = { "amixer", "-D", "pulse", "set", "Master", "3%-", NULL };
-static const char *mutevol[] = { "amixer", "-D", "pulse", "set", "Master", "toggle", NULL };
+static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 /* Brightnes */
 static const char *brightness_up[]  =   { "xbacklight", "-inc", "2", NULL };
 static const char *brightness_down[]  = { "xbacklight", "-dec", "2", NULL };
