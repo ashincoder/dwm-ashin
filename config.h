@@ -20,17 +20,18 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=10" };
 static const char dmenufont[]       = "JetBrains Mono Nerd Font:size=10";
 /* Colorscheme */
-static const char norm_fg[] = "#d7dbcc";
-static const char norm_bg[] = "#100f09";
-static const char norm_border[] = "#96998e";
+
+static const char norm_fg[] = "#c8ddf3";
+static const char norm_bg[] = "#061722";
+static const char norm_border[] = "#8c9aaa";
 
 static const char sel_fg[] = "#11121D";
-static const char sel_bg[] = "#D8A93C";
-static const char sel_border[] = "#d7dbcc";
+static const char sel_bg[] = "#4675A6";
+static const char sel_border[] = "#c8ddf3";
 
-static const char urg_fg[] = "#d7dbcc";
-static const char urg_bg[] = "#638B71";
-static const char urg_border[] = "#638B71";
+static const char urg_fg[] = "#c8ddf3";
+static const char urg_bg[] = "#15659A";
+static const char urg_border[] = "#15659A";
 
 static const char *colors[][3]      = {
     /*               fg           bg         border                         */
@@ -85,7 +86,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
 /* Aplications */
-static const char *browser[]  = { "qutebrowser", NULL };
+static const char *browser[]  = { "firefox", NULL };
 static const char *file[]  = { "pcmanfm", NULL };
 static const char *editor[]  = { "emacsclient", "-c", "-a", "emacs", NULL };
 /* Scripts */
