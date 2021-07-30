@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdint.h>
 #include <X11/Xlib.h>
 #include <X11/Xft/Xft.h>
 
@@ -364,6 +365,26 @@ drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lp
 		XftDrawDestroy(d);
 
 	return x + (render ? w : 0);
+}
+
+static uint32_t blend(uint32_t p1rb, uint32_t p1g, uint32_t p2) {
+	uint8_t a = p2 >> 24u;
+	uint32_t rb = (p2 & 0xFF00FFu) + ( (a * p1rb) >> 8u );
+	uint32_t g = (p2 & 0x00FF00u) + ( (a * p1g) >> 8u );
+	return (rb & 0xFF00FFu) | (g & 0x00FF00u);
+}
+
+void
+drw_img(Drw *drw, int x, int y, XImage *img, uint32_t *tmp) 
+{
+	if (!drw || !drw->scheme)
+		return;
+	uint32_t *data = (uint32_t *)img->data, p = drw->scheme[ColBg].pixel, prb = p & 0xFF00FFu, pg = p & 0x00FF00u;
+	int icsz = img->width * img->height, i;
+	for (i = 0; i < icsz; ++i) tmp[i] = blend(prb, pg, data[i]);
+	img->data = (char *) tmp;
+	XPutImage(drw->dpy, drw->drawable, drw->gc, img, 0, 0, x, y, img->width, img->height);
+	img->data = (char *) data;
 }
 
 void

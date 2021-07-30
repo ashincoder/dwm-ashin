@@ -1,4 +1,3 @@
-drw.o
 dwm
-dwm.o
-util.o
+*.o
+*.orig

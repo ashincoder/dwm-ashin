@@ -18,21 +18,23 @@ static const unsigned int gappx = 3;      /* gaps between windows */
 static const unsigned int snap = 32;      /* snap pixel */
 static const int showbar = 1;             /* 0 means no bar */
 static const int topbar = 1;              /* 0 means bottom bar */
+#define ICONSIZE 20                       /* icon size */
+#define ICONSPACING 5                     /* space between icon and title */
 static const char *fonts[] = {"JetBrains Mono Nerd Font:size=10"};
 static const char dmenufont[] = "JetBrains Mono Nerd Font:size=10";
 /* Colorscheme */
 
-static const char norm_fg[] = "#c8ddf3";
-static const char norm_bg[] = "#061722";
-static const char norm_border[] = "#8c9aaa";
+static const char norm_fg[] = "#d9d3d7";
+static const char norm_bg[] = "#0a0906";
+static const char norm_border[] = "#979396";
 
-static const char sel_fg[] = "#11121D";
-static const char sel_bg[] = "#4675A6";
-static const char sel_border[] = "#c8ddf3";
+static const char sel_fg[] = "#d9d3d7";
+static const char sel_bg[] = "#8F6536";
+static const char sel_border[] = "#d9d3d7";
 
-static const char urg_fg[] = "#c8ddf3";
-static const char urg_bg[] = "#15659A";
-static const char urg_border[] = "#15659A";
+static const char urg_fg[] = "#d9d3d7";
+static const char urg_bg[] = "#69625C";
+static const char urg_border[] = "#69625C";
 
 static const char *colors[][3] = {
     /*               fg           bg         border                         */
