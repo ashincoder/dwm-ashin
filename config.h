@@ -98,7 +98,7 @@ static const char *editor[] = {"emacsclient", "-c", "-a", "emacs", NULL};
 /* Scripts */
 static const char *logout[] = {".config/rofi/bin/menu_powermenu", NULL};
 static const char *apps[] = {".config/rofi/bin/menu_apps", NULL};
-static const char *calc[] = { ".local/bin/calc_rofi", NULL};
+static const char *calc[] = {".local/bin/calc_rofi", NULL};
 static const char *music[] = {".local/bin/dm-sounds", NULL};
 static const char *wifi[] = {".local/bin/dm-wifi", NULL};
 static const char *config[] = {".local/bin/dm-confedit", NULL};
@@ -133,7 +133,7 @@ static Key keys[] = {
     {MODKEY, XK_c, spawn, {.v = config}},
     {MODKEY, XK_p, spawn, {.v = programs}},
     {MODKEY, XK_r, spawn, {.v = record}},
-    {ShiftMask, XK_c, spawn, {.v = calc}},
+    {MODKEY | ShiftMask, XK_c, spawn, {.v = calc}},
     {MODKEY | ShiftMask, XK_w, spawn, {.v = wifi}},
     {0, PrintScreenDWM, spawn, {.v = screenshot}},
 
