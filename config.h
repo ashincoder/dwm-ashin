@@ -52,7 +52,7 @@ static const Rule rules[] = {
      *	WM_NAME(STRING) = title
      */
     /* class      instance    title       tags mask     isfloating   monitor */
-    {"st", NULL, NULL, 1, 0, -1},          {"firefox", NULL, NULL, 2, 0, -1},
+    {"kitty", NULL, NULL, 1, 0, -1},          {"firefox", NULL, NULL, 2, 0, -1},
     {"pcmanfm", NULL, NULL, 3, 0, -1},     {"yad", NULL, NULL, 0, 1, -1},
     {"pavucontrol", NULL, NULL, 0, 1, -1},
 };
@@ -90,7 +90,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {".config/rofi/bin/launcher_colorful", NULL};
-static const char *termcmd[] = {"st", NULL};
+static const char *termcmd[] = {"kitty", NULL};
 /* Aplications */
 static const char *browser[] = {"firefox", NULL};
 static const char *file[] = {"pcmanfm", NULL};
