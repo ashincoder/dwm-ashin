@@ -52,7 +52,7 @@ static const Rule rules[] = {
      *	WM_NAME(STRING) = title
      */
     /* class      instance    title       tags mask     isfloating   monitor */
-    {"kitty", NULL, NULL, 1, 0, -1},          {"firefox", NULL, NULL, 2, 0, -1},
+    {"kitty", NULL, NULL, 1, 0, -1},       {"firefox", NULL, NULL, 2, 0, -1},
     {"pcmanfm", NULL, NULL, 3, 0, -1},     {"yad", NULL, NULL, 0, 1, -1},
     {"pavucontrol", NULL, NULL, 0, 1, -1},
 };
@@ -97,6 +97,8 @@ static const char *file[] = {"pcmanfm", NULL};
 static const char *editor[] = {"emacsclient", "-c", "-a", "emacs", NULL};
 /* Scripts */
 static const char *logout[] = {".config/rofi/bin/menu_powermenu", NULL};
+static const char *emoji[] = {"rofi",  " -show", "emoji",
+                              "-modi", "emoji",  NULL};
 static const char *apps[] = {".config/rofi/bin/menu_apps", NULL};
 static const char *calc[] = {".local/bin/calc_rofi", NULL};
 static const char *music[] = {".local/bin/dm-sounds", NULL};
@@ -134,6 +136,7 @@ static Key keys[] = {
     {MODKEY, XK_p, spawn, {.v = programs}},
     {MODKEY, XK_r, spawn, {.v = record}},
     {MODKEY | ShiftMask, XK_c, spawn, {.v = calc}},
+    {MODKEY | ShiftMask, XK_e, spawn, {.v = emoji}},
     {MODKEY | ShiftMask, XK_w, spawn, {.v = wifi}},
     {0, PrintScreenDWM, spawn, {.v = screenshot}},
 
