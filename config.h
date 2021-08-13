@@ -52,7 +52,7 @@ static const Rule rules[] = {
      *	WM_NAME(STRING) = title
      */
     /* class      instance    title       tags mask     isfloating   monitor */
-    {"st", NULL, NULL, 1, 0, -1},          {"firefox", NULL, NULL, 2, 0, -1},
+    {"st", NULL, NULL, 1, 0, -1},          {"brave", NULL, NULL, 2, 0, -1},
     {"pcmanfm", NULL, NULL, 3, 0, -1},     {"yad", NULL, NULL, 0, 1, -1},
     {"pavucontrol", NULL, NULL, 0, 1, -1},
 };
@@ -90,15 +90,14 @@ static const Layout layouts[] = {
 static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {"rofi", "-show", "drun", NULL};
-static const char *termcmd[] = {"tabbed", "-r", "2", "st", "-w", "''", NULL};
+static const char *termcmd[] = {"st", NULL};
 /* Aplications */
-static const char *browser[] = {"firefox", NULL};
+static const char *browser[] = {"brave", NULL};
 static const char *file[] = {"pcmanfm", NULL};
 static const char *editor[] = {"emacsclient", "-c", "-a", "emacs", NULL};
 /* Scripts */
 static const char *logout[] = {".local/bin/dm-logout", NULL};
 static const char *emoji[] = {"rofi", "-show", "emoji", "-modi", "emoji", NULL};
-static const char *calc[] = {".local/bin/calc_rofi", NULL};
 static const char *music[] = {".local/bin/dm-sounds", NULL};
 static const char *wifi[] = {".local/bin/dm-wifi", NULL};
 static const char *config[] = {".local/bin/dm-confedit", NULL};
@@ -132,7 +131,6 @@ static Key keys[] = {
     {MODKEY, XK_c, spawn, {.v = config}},
     {MODKEY, XK_p, spawn, {.v = programs}},
     {MODKEY, XK_r, spawn, {.v = record}},
-    {MODKEY | ShiftMask, XK_c, spawn, {.v = calc}},
     {MODKEY | ShiftMask, XK_e, spawn, {.v = emoji}},
     {MODKEY | ShiftMask, XK_w, spawn, {.v = wifi}},
     {0, PrintScreenDWM, spawn, {.v = screenshot}},
