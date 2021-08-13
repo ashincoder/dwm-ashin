@@ -24,17 +24,17 @@ static const char *fonts[] = {"JetBrains Mono Nerd Font:size=10"};
 static const char dmenufont[] = "JetBrains Mono Nerd Font:size=10";
 /* Colorscheme */
 
-static const char norm_fg[] = "#d9d3d7";
-static const char norm_bg[] = "#0a0906";
-static const char norm_border[] = "#979396";
+static const char norm_fg[] = "#bcc3cd";
+static const char norm_bg[] = "#06090D";
+static const char norm_border[] = "#83888f";
 
-static const char sel_fg[] = "#d9d3d7";
-static const char sel_bg[] = "#8F6536";
-static const char sel_border[] = "#d9d3d7";
+static const char sel_fg[] = "#bcc3cd";
+static const char sel_bg[] = "#585B60";
+static const char sel_border[] = "#bcc3cd";
 
-static const char urg_fg[] = "#d9d3d7";
-static const char urg_bg[] = "#69625C";
-static const char urg_border[] = "#69625C";
+static const char urg_fg[] = "#bcc3cd";
+static const char urg_bg[] = "#455A6E";
+static const char urg_border[] = "#455A6E";
 
 static const char *colors[][3] = {
     /*               fg           bg         border                         */
@@ -89,17 +89,15 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = {".config/rofi/bin/launcher_colorful", NULL};
+static const char *dmenucmd[] = {"rofi", "-show", "drun", NULL};
 static const char *termcmd[] = {"tabbed", "-r", "2", "st", "-w", "''", NULL};
 /* Aplications */
 static const char *browser[] = {"firefox", NULL};
 static const char *file[] = {"pcmanfm", NULL};
 static const char *editor[] = {"emacsclient", "-c", "-a", "emacs", NULL};
 /* Scripts */
-static const char *logout[] = {".config/rofi/bin/menu_powermenu", NULL};
-static const char *emoji[] = {"rofi",  " -show", "emoji",
-                              "-modi", "emoji",  NULL};
-static const char *apps[] = {".config/rofi/bin/menu_apps", NULL};
+static const char *logout[] = {".local/bin/dm-logout", NULL};
+static const char *emoji[] = {"rofi", "-show", "emoji", "-modi", "emoji", NULL};
 static const char *calc[] = {".local/bin/calc_rofi", NULL};
 static const char *music[] = {".local/bin/dm-sounds", NULL};
 static const char *wifi[] = {".local/bin/dm-wifi", NULL};
@@ -127,7 +125,6 @@ static Key keys[] = {
     /* dmenu scripts and stuff */
 
     {MODKEY, XK_d, spawn, {.v = dmenucmd}},
-    {MODKEY, XK_a, spawn, {.v = apps}},
     {MODKEY, XK_x, spawn, {.v = logout}},
     {MODKEY, XK_m, spawn, {.v = music}},
     {MODKEY, XK_b, spawn, {.v = browse}},
