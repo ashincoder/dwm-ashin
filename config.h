@@ -154,7 +154,6 @@ static Key keys[] = {
     {0, XF86XK_MonBrightnessDown, spawn, {.v = brightness_down}},
     /* all the layout and stuff   */
 
-    {MODKEY, XK_semicolon, spawn, SHCMD("skippy-xd")},
     {MODKEY | ShiftMask, XK_b, togglebar, {0}},
     {MODKEY | ShiftMask, XK_j, rotatestack, {.i = +1}},
     {MODKEY | ShiftMask, XK_k, rotatestack, {.i = -1}},
@@ -167,6 +166,7 @@ static Key keys[] = {
     {MODKEY, XK_q, killclient, {0}},
     {MODKEY, XK_t, setlayout, {.v = &layouts[0]}},
     {MODKEY, XK_f, setlayout, {.v = &layouts[2]}},
+    {MODKEY | ShiftMask, XK_f, togglefullscr, {0}},
     {MODKEY, XK_g, setlayout, {.v = &layouts[3]}},
     {MODKEY, XK_Tab, setlayout, {0}},
     {MODKEY, XK_space, cyclelayout, {.i = -1}},
